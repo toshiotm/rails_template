@@ -16,7 +16,6 @@ gem 'rails-i18n'
 gem 'jquery-turbolinks'
 gem 'sprockets-rails', '2.3.3'
 
-gem 'sass-rails'
 gem 'slim-rails'
 
 gem 'quiet_assets'
