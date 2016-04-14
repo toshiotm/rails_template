@@ -25,7 +25,7 @@ gem 'rails-flog'
 
 gem 'migration_comments'
 
-group : :development, :test do
+group :development, :test do
     gem 'pry-rails'
     gem 'pry-coolline'
     gem 'pry-byebug'
@@ -35,7 +35,7 @@ group : :development, :test do
     gem 'awesome_print'
 end
 
-group: :test do
+group :test do
     gem "minitest-rails-capybara"
     gem 'timecop'
     gem 'faker'
@@ -93,15 +93,15 @@ insert_into_file 'test/test_helper.rb',%(
 run 'wget https://raw.github.com/svenfuchs/rails-i18n/master/rails/locale/ja.yml -P config/locales/'
 
 run 'rm -rf app/assets/javascripts/application.js'
-run 'wget https://raw.github.com/toshiotm/app_template/master/app/assets/javascripts/application.js -P app/assets/javascripts/'
+run 'wget https://raw.github.com/toshiotm/rails_template/master/app/assets/javascripts/application.js -P app/assets/javascripts/'
 
 
 # DB
 run 'rm -rf config/database.yml'
 if yes?('Use MySQL?([yes] else PostgreSQL)')
-  run 'wget https://raw.github.com/toshiotm/app_template/master/config/mysql/database.yml -P config/'
+  run 'wget https://raw.github.com/toshiotm/rails_template/master/config/mysql/database.yml -P config/'
 else
-  run 'wget https://raw.github.com/toshiotm/app_template/master/config/postgresql/database.yml -P config/'
+  run 'wget https://raw.github.com/toshiotm/rails_template/master/config/postgresql/database.yml -P config/'
   run "createuser #{@app_name} -s"
 end
 
