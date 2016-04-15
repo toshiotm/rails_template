@@ -10,7 +10,7 @@ gsub_file '.gitignore', /config\/secret.yml/, ''
 
 append_file 'Gemfile', <<-CODE
 
-gem 'therubyracer'
+gem 'therubyracer', platforms: :ruby
 gem 'bcrypt', '~> 3.1.7'
 gem 'rails-i18n'
 gem 'jquery-turbolinks'
