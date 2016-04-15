@@ -1,25 +1,26 @@
 default: &default
-  adapter: postgresql
-  encoding: utf8
-  username: APPNAME
-  password:
-  timeout: 5000
-  host: localhost
-  pool: 5
+ adapter: postgresql
+ encoding: utf8
+ username: APPNAME
+ password:
+ timeout: 5000
+ host: localhost
+ pool: 5
   
 development:
-　<<: *default
-  database: APPNAME_development
+ <<: *default
+ database: APPNAME_development
 
 test:
-　<<: *default
-  database: APPNAME_test
+ <<: *default
+ database: APPNAME_test
 
 production:
-  adapter: postgresql
-  encoding: utf8
-  database: <%= ENV['DB_NAME'] %>
-  username: <%= ENV['USERNAME'] %>
-  password: <%= ENV['PASSWORD'] %>
-  host: <%= ENV['HOSTNAME'] %>
-  port: <%= ENV['PORT'] %>
+ adapter: postgresql
+ encoding: utf8
+ database: <%= ENV['DB_NAME'] %>
+ username: <%= ENV['USERNAME'] %>
+ password: <%= ENV['PASSWORD'] %>
+ host: <%= ENV['HOSTNAME'] %>
+ port: <%= ENV['PORT'] %>
+ pool: 5
