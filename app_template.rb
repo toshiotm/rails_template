@@ -43,7 +43,7 @@ end
 
 CODE
 
-@use_db = yes?("Do use Mysql? (No is Postgresql.)")
+@use_db = yes?("Do you use Mysql? (No is Postgresql.)")
 if @use_db
     append_file 'Gemfile', "gem 'mysql2'" 
 else
