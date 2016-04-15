@@ -68,11 +68,6 @@ application do
         
         config.generators do |g|
             g.template_engine :slim
-            g.view_specs false
-            g.controller_specs false
-            g.routing_specs false
-            g.helper_specs false
-            g.request_specs false
             g.assets false
             g.helper false
         end
