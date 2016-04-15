@@ -81,11 +81,12 @@ application do
 end
 
 insert_into_file 'test/test_helper.rb',%(
-    require "capybara/rails"
+require "capybara/rails"
 
-    class ActionDispatch::IntegrationTest
-        include Capybara::DSL
-    end
+class ActionDispatch::IntegrationTest
+    include Capybara::DSL
+end
+
 ), before: 'class ActiveSupport::TestCase'
 
 
