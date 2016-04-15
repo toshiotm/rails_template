@@ -43,9 +43,10 @@ end
 
 CODE
 
-if yes?("Do use Mysql?")
+@use_db = yes?("Do use Mysql? (No is Postgresql.)")
+if @use_db
     append_file 'Gemfile', "gem 'mysql2'" 
-elsif yes?("Postgresql?")
+else
     append_file 'Gemfile', "gem 'pg'" 
 end
 
@@ -98,7 +99,7 @@ run 'wget https://raw.github.com/toshiotm/rails_template/master/app/assets/javas
 
 # DB
 run 'rm -rf config/database.yml'
-if yes?('Use MySQL?([yes] else PostgreSQL)')
+if @use_db
   run 'wget https://raw.github.com/toshiotm/rails_template/master/config/mysql/database.yml -P config/'
 else
   run 'wget https://raw.github.com/toshiotm/rails_template/master/config/postgresql/database.yml -P config/'
