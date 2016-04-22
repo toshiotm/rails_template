@@ -10,6 +10,7 @@ gsub_file '.gitignore', /config\/secret.yml/, ''
 
 append_file 'Gemfile', <<-CODE
 
+# extended from here.
 gem 'libv8'
 gem 'therubyracer', platforms: :ruby
 gem 'bcrypt', '~> 3.1.7'
